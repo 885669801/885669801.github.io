@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-14T08:27:19.751Z</updated>
+  <updated>2020-01-15T06:51:31.035Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://yoursite.com/2020/01/15/test/"/>
+    <id>http://yoursite.com/2020/01/15/test/</id>
+    <published>2020-01-15T06:52:12.129Z</published>
+    <updated>2020-01-15T06:51:31.035Z</updated>
+    
+    <content type="html"><![CDATA[<p>在没有绘制marker之前，你可以自定义图标</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> perIcon = <span class="keyword">new</span> BMap.Icon(per, <span class="keyword">new</span> BMap.Size(<span class="number">32</span>, <span class="number">32</span>));<span class="comment">//per是引入的本地图标文件，也就是你想要自定义的图标</span></span><br><span class="line"><span class="keyword">var</span> perIcon2 = <span class="keyword">new</span> BMap.Icon(per2, <span class="keyword">new</span> BMap.Size(<span class="number">32</span>, <span class="number">32</span>)); <span class="comment">//改变之后的图标</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> markergg = <span class="keyword">new</span> BMap.Marker(</span><br><span class="line">        <span class="keyword">new</span> BMap.Point(maplongitude, maplatitude),</span><br><span class="line">        &#123;</span><br><span class="line">          icon: perIcon</span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line"> <span class="keyword">this</span>.map.addOverlay(markergg); <span class="comment">//添加marker</span></span><br><span class="line"> markergg.setAnimation(BMAP_ANIMATION_BOUNCE)</span><br><span class="line"> <span class="keyword">let</span> labelgg = <span class="keyword">new</span> BMap.Label(person.devname, &#123;</span><br><span class="line">        offset: <span class="keyword">new</span> BMap.Size(<span class="number">20</span>, <span class="number">-10</span>)</span><br><span class="line">   &#125;);</span><br><span class="line"> markergg.setLabel(labelgg); <span class="comment">//添加label</span></span><br></pre></td></tr></table></figure><p>当你已经绘制过marker图标后，因为有需求要改变它的样式(不是指style，变成另一个图标)，<br>可以先获取到你之前绘制的marker，通过之前添加的label，可以获取到你想要的改变的marker</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> allOverlay = that.map.getOverlays()</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allOverlay.length; i++) &#123;</span><br><span class="line"><span class="keyword">if</span> (allOverlay[i].getLabel().content == person.devname) &#123;<span class="comment">//获取到你想要改变的marker</span></span><br><span class="line">allOverlay[i].setIcon(perIcon2)<span class="comment">//变成另一个icon</span></span><br><span class="line"><span class="comment">//allOverlay[i].setAnimation()</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在绘制marker的时候也可以通过设置<code>markergg.setAnimation(BMAP_ANIMATION_BOUNCE)</code>来 设置他弹跳动画，也能在获取到要改变的marker之后设置<code>allOverlay[i].setAnimation()</code>来停止弹跳</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在没有绘制marker之前，你可以自定义图标&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span c
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
